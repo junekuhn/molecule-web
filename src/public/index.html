@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>CH220 Model Viewer</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Justin Kuhn">
+    <meta name="description" content="A Model Viewer for Organic Chemisty at NC State">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" />
+</head>
+
+<body>
+    <div id="tooltip">hello</div>
+    <!--   SHould the type be module?  Who knows!!!!-->
+    <canvas id="c"></canvas>
+
+    <div id="content">
+        <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - multiple elements - webgl</div>
+        <div>
+            <p> Links to <a href="panels/2panel.html"> two-panel </a>,
+                <a href="panels/4panel.html">four-panel</a>, and 
+                <a href="panels/grid.html">grid</a> layouts
+            </p>
+        </div>
+        <div> <input id="add-object" type="button" class="add-object" value="ADD NEW SCENE"></div>
+    </div>
+
+    <script id="template" type="notjs">
+        <div class="scene"></div>
+        <div class="description">Scene $</div>
+        <input class="side" type="button" value="Side View"/>
+        <input class="top" type="button" value="Top View"/>
+        <input class="front" type="button" value="Front View"/>
+        <input class="toggle" type="button" value="Toggle"/>
+        <input class="screen" type="button" value="Fullscreen"/>
+        <div class="meshlist">
+            <ul class="list">
+            </ul>        
+        </div>
+    </script>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

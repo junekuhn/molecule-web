@@ -1,0 +1,27 @@
+data.js
+    alt text for images
+    direction for viewer
+
+skip to viewer column
+    better navigation 
+    or better naming
+
+     a nav bar that links to each molecule?
+
+ar dev
+
+    on intersection of phone and object
+        find the world position of phone
+        find the world position of molecule
+        calculate distance
+        if under threshold blah blah
+
+    this could be easier if I was using the quest, then I have access to more buttons and triggers
+
+
+supplemental section 
+
+january early february
+
+
+

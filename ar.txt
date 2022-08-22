@@ -1,0 +1,76 @@
+quickstart
+    npm start
+    adb devices
+    chrome://inspect/#devices
+
+    if HTTP/1.1 404 Not Found
+        try again tomorrow
+
+possible AR avenues
+
+Three.js Webxr built in modules
+    ARButton
+
+A-Frame
+    a scene is just automatically converted
+    lots of built in xr interaction
+
+8th wall
+    costs money
+    but can be used over three.js, a-frame, etc
+    https://www.8thwall.com/docs/web/#start-a-new-project
+
+    helpers: more robust, placement systems, world tracking, react, cube maps
+    stickied or ar ui 
+    have to use their IDE
+    hosting is included
+
+    one finger touch helper script
+
+
+
+zappar has an sdk 
+    can be used with three.js or aframe
+    https://zap.works/webar/ - i don't think this is what I'm looking for
+    https://zap.works/universal-ar/threejs/
+    https://docs.zap.works/universal-ar/threejs/
+
+    their own ide
+    interface is good
+    hard to import assets
+    good interactions
+
+adobe aero
+    ios only
+
+Chrome dev setup
+    https://developers.google.com/web/tools/chrome-devtools/remote-debugging/
+    turn off vpn
+    see SM-g960U sevice
+    turn on port forwarding
+
+interaction
+    the hit test by default deploys a ring on the floor
+    either a menu to choose molecule or
+    the molecule is chosen in the url (better option)
+    touching the molecule does the interactive part of MWV
+
+    i wonder if trying to put a DOM overlay is a good idea, either in place or stickied to the screen
+
+relevant docs
+    WebXRManager - https://threejs.org/docs/index.html#api/en/renderers/webxr/WebXRManager
+        accessible through renderer.xr.*
+        enabled = true
+    AR Button https://github.com/mrdoob/three.js/blob/master/examples/jsm/webxr/ARButton.js
+    https://developer.mozilla.org/en-US/docs/Web/API/XRSystem/requestSession
+    https://developer.mozilla.org/en-US/docs/Web/API/XRSessionEvent
+    https://developer.mozilla.org/en-US/docs/Web/API/XRSession/squeeze_event
+    https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API/Inputs#Primary_squeeze_actions
+    
+
+
+
+
+    
+
+    

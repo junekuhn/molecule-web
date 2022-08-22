@@ -1,0 +1,93 @@
+
+Webpack guide on assets
+https://webpack.js.org/guides/asset-management/
+
+token
+fde5b6eb6397affc885ba1e60a36af41800c93fc
+
+Tutorials
+https://threejsfundamentals.org/threejs/lessons/threejs-fundamentals.html
+https://codepen.io/rachsmith/post/beginning-with-3d-webgl-pt-1-the-scene
+https://www.august.com.au/blog/animating-scenes-with-webgl-three-js/
+http://www.cjgammon.com/
+https://www.udacity.com/course/interactive-3d-graphics--cs291
+http://learningthreejs.com/
+
+
+es6 syntax
+https://exploringjs.com/es6/ch_modules.html
+
+multiple scenes
+https://threejsfundamentals.org/threejs/lessons/threejs-multiple-scenes.html
+https://threejs.org/examples/webgl_multiple_elements.html
+https://threejs.org/examples/#webgl_multiple_scenes_comparison
+
+Three js User Data
+https://stackoverflow.com/questions/18319154/with-three-js-can-i-attach-information-to-an-object-such-as-a-url
+
+
+Things to understand
+1. HTML templates
+2. html canvas element
+3. three js and class structures
+4. css types for template display
+
+building step by step
+1. one div with one scene and text based on a template
+2. write class for creating the one scene and description
+3. develop api
+4. make buttons on the page that create instances of the class
+
+delete remote
+git push origin --delete front-end
+
+delete local
+git branch -d front-end
+
+https://issdev.delta.ncsu.edu/courses/ch220/molecule-web-viewer/
+https://issdev.delta.ncsu.edu/courses/ch220/chart3
+Connecting to issdev
+First off, you'll need to setup an FTP client to access issdev (I'd recommend Filezilla)
+
+General
+Protocol: SFTP
+Host: issdev.delta.ncsu.edu
+
+Advanced
+Default remote directory: /auto/dev/nmd_web/courses/ch220/molecule-web-viewer
+
+Use unity ID / pass to login.
+
+If you're having trouble connecting, gimme a shout - you should have access, but there may be some issues that our ETS staff can help with.
+
+Working on issdev
+The folder structure is a little messy, but since we're developing something specifically for a course, we'll put files in the /courses/ch220/ directory. Feel free to create folders if necessary for the molecule viewer.
+
+And of course, hands off other folders :) (Or at least ask permission beforehand)
+
+
+https://inclusive-components.design/tooltips-toggletips/
+
+Toon Shading
+https://en.wikibooks.org/wiki/GLSL_Programming/Unity/Toon_Shading - advanced
+https://en.wikipedia.org/wiki/Cel_shading - background
+https://webgl-shaders.com/toon-example.html
+https://cglearn.codelight.eu/pub/computer-graphics/shading-and-lighting
+https://www.thisiscolossal.com/
+
+editing a material shader from THREE 
+https://github.com/mrdoob/three.js/blob/master/examples/webgl_materials_modified.html
+https://medium.com/@pailhead011/extending-three-js-materials-with-glsl-78ea7bbb9270
+
+
+Custom Color to Shader
+https://github.com/mrdoob/three.js/blob/master/examples/webgl_custom_attributes_lines.html
+
+
+https://github.com/CesiumGS/gltf-pipeline
+Converting the draco correctly via command line 
+gltf-pipeline -i Butane.gltf -o butane_unified.gltf -d --draco.unifiedQuantization
+
+Newman Projections
+https://www.khanacademy.org/science/organic-chemistry/bond-line-structures-alkanes-cycloalkanes/conformations-alkanes-cycloalkanes/v/newman-projections-2
+

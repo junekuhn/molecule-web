@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+    <title>4-panel</title>
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div id="toolbar" class="toolbar">
+        <div class="checkbox-container">
+            <input id="checkbox" type="checkbox" checked="checked" class="checkbox" />
+            <label for="checkbox">Sound On/Off</label>
+        </div>
+        <div class="volume-container">
+            <input id="volume" type="number" min="0.0" max="1.0" step="0.1" value="0.5" class="volume" />
+            <label for="volume">Volume</label>
+        </div>
+    </div>
+    <div id="main" class="four-panel-layout">
+        <div id="panel-0" class="panel">
+            <div id="content-0" class="content">
+
+            </div>
+            <div id="scene-container-0" class="scene-container">
+
+            </div>
+        </div>
+        <div id="panel-1" class="panel">
+            <div id="content-1" class="content">
+
+            </div>
+            <div id="scene-container-1" class="scene-container">
+
+            </div>
+        </div>
+        <div id="panel-2" class="panel">
+            <div id="content-2" class="content">
+
+            </div>
+            <div id="scene-container-2" class="scene-container">
+
+            </div>
+        </div>
+        <div id="panel-3" class="panel">
+            <div id="content-3" class="content">
+
+            </div>
+            <div id="scene-container-3" class="scene-container">
+
+            </div>
+        </div>
+    </div>
+    <canvas id="c"></canvas>
+
+    <div id="tooltip" role="tooltip"></div>
+
+    <script id="template" type="notjs">
+        <div class="scene"></div>
+        <div class="description">
+            <h1>$</h1>
+        </div>
+        <div class="flex-container">
+            <div class="views">
+                <input type="button" value="Views"/>
+                <ul class="dropdown"></ul>
+            </div>
+            <div class="sounds">
+                <input type="button" value="Sound Bank" aria-describedby="tooltip-sound"/>
+                <div id="tooltip-sound" class="visually-hidden" role="tooltip">The Sounds below represent each atom <br>according to their protons.</div>
+                <ul class="dropdown"></ul>
+            </div>
+            <div class="meshes">
+                <input type="button" value="Meshes"/>
+                <ul class="dropdown"></ul>
+            </div>
+        </div>
+    </script>
+    <script type="module" src="./js/panels.js"></script>
+</body>

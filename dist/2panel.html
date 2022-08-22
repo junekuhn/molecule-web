@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+    <title>2-panel</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+    <div id="toolbar" class="toolbar">
+        <!-- <div class="checkbox-container">
+            <input id="checkbox" type="checkbox" class="checkbox"/>
+            <label for="checkbox">Sound On/Off</label>
+        </div>
+        <div class="volume-container">
+            <input id="volume" type="number" min="0.0" max="1.0" step="0.1" value="0.5" class="volume"/>
+            <label for="volume">Volume</label>
+        </div> -->
+        <div class="slide-container">
+            <input type="range" min="0" max="100" value="0" step="1" class="slider" id="volume-slider">
+            <label id="volume-label" for="volume-slider" class="visually-hidden">Volume Slider</label>
+            <div id="vol-svg">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title"
+                aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>Mute</title>
+                <desc>A line styled icon from Orion Icon Library.</desc>
+                <path data-name="layer2"
+                fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="3" d="M29.4 45.4L42 58V32m0-10V6L24 24H12a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12"
+                stroke-linejoin="round" stroke-linecap="round"></path>
+                <path data-name="layer1" fill="none" stroke="#ffffff" stroke-miterlimit="10"
+                stroke-width="3" d="M62 2L2 62" stroke-linejoin="round" stroke-linecap="round"></path>
+                </svg>
+            </div>
+        </div>
+        <div id="reset-button" role="button" aria-pressed="false" tabindex="0" aria-label="Reset Button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title"
+                aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>Restart</title>
+                <desc>A line styled icon from Orion Icon Library.</desc>
+                <path data-name="layer1"
+                d="M53.832 32.98A26 26 0 1 0 28 56.034" fill="none" stroke="#ffffff" stroke-miterlimit="10"
+                stroke-width="3" stroke-linejoin="round" stroke-linecap="round"></path>
+                <path data-name="layer2" fill="none" stroke="#ffffff" stroke-miterlimit="10"
+                stroke-width="3" d="M62 21l-8.168 11.98L43 23" stroke-linejoin="round"
+                stroke-linecap="round"></path>
+                <path data-name="layer1" fill="none" stroke="#ffffff" stroke-miterlimit="10"
+                stroke-width="3" d="M28 52.016V60" stroke-linejoin="round" stroke-linecap="round"></path>
+            </svg>
+        </div>
+    </div>
+    <div id="main" class="two-panel-layout">
+        <div id="panel-0" class="panel">
+            <div id="content-0" class="content">
+
+            </div>
+            <div id="scene-container-0" class="scene-container">
+
+            </div>
+        </div>
+        <div id="panel-1" class="panel">
+            <div id="content-1" class="content">
+
+            </div>
+            <div id="scene-container-1" class="scene-container">
+
+            </div>
+        </div>
+    </div>
+    
+    <div id="tooltip" role="tooltip"></div> 
+
+    <canvas id="c"></canvas>
+
+<!--
+    <script type="text/javascript">
+        window.addEventListener('resize', function(e) {
+            console.log(document.getElementById('panel-1').getBoundingClientRect());
+        });
+
+    </script>
+-->
+    <script id="template" type="notjs">
+        <div class="scene"></div>
+        <div class="description">
+            <h1 tabindex="0">$</h1>
+        </div>
+        <div class="flex-container">
+            <div class="sounds">
+                <div class="buttons" role="button" aria-pressed="false" aria-describedby="tooltip-sound-0~" aria-label="Sounds Dropdown" tabindex="0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title"
+                        role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>Music File</title>
+                        <desc>A line styled icon from Orion Icon Library.</desc>
+                        <path data-name="layer1"
+                        d="M30 43h-4a4 4 0 1 0 4 4V25l16-4v22a4 4 0 1 1-4-4h4" fill="none" stroke="#ffffff"
+                        stroke-miterlimit="10" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"></path>
+                        <path data-name="layer2" fill="none" stroke="#ffffff" stroke-miterlimit="10"
+                        stroke-width="3" d="M10 53H2V3h52v8" stroke-linejoin="round" stroke-linecap="round"></path>
+                        <path data-name="layer1" fill="none" stroke="#ffffff" stroke-miterlimit="10"
+                        stroke-width="3" d="M10 11h52v50H10z" stroke-linejoin="round" stroke-linecap="round"></path>
+                    </svg>
+                    Sound Bank
+                </div>
+                <div id="tooltip-sound-0~" class="visually-hidden" role="tooltip">The sounds below sonify each type of atom</div>
+                <ul class="dropdown"></ul>
+            </div>
+            <div class="views">
+                <div class="buttons" role="button" aria-pressed="false" aria-describedby="tooltip-views-1~" aria-label="Views Dropdown" tabindex="0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title"
+                        role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>Binocular</title>
+                        <desc>A line styled icon from Orion Icon Library.</desc>
+                        <path data-name="layer2"
+                        d="M28 42V16.5A7.5 7.5 0 0 0 20.5 9a7.7 7.7 0 0 0-6.7 4.1l-.3.6L3 37m33 5V16.5A7.5 7.5 0 0 1 43.5 9a7.7 7.7 0 0 1 6.7 4.1l.3.6L61 37M28 17.8a10 10 0 0 1 7.9 0m-7.9 12a10 10 0 0 1 7.9 0"
+                        fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="3" stroke-linejoin="round"
+                        stroke-linecap="round"></path>
+                        <circle data-name="layer1" cx="15" cy="42" r="13" fill="none" stroke="#ffffff"
+                        stroke-miterlimit="10" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"></circle>
+                        <path data-name="layer1" d="M22 42a7 7 0 0 1-7 7m41-7a7 7 0 0 1-7 7"
+                        fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="3" stroke-linejoin="round"
+                        stroke-linecap="round"></path>
+                        <circle data-name="layer1" cx="49" cy="42" r="13" fill="none" stroke="#ffffff"
+                        stroke-miterlimit="10" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"></circle>
+                    </svg>
+                    Views
+                </div>
+                <div id="tooltip-views-1~" class="visually-hidden" role="tooltip">Each view is sonified from on the horizontal axis from left to right.</div>
+                <ul class="dropdown"></ul>
+            </div>
+            <div class="meshes">
+                <div class="buttons" role="button" aria-pressed="false" aria-describedby="tooltip-sound-2~" aria-label="Toggle Atoms Dropdown" tabindex="0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title"
+                        role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>Data Content</title>
+                        <desc>A line styled icon from Orion Icon Library.</desc>
+                        <path data-name="layer2"
+                        fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="3" d="M62 35v20.4L45 61l-17-5.6V35l17-5.7L62 35z"
+                        stroke-linejoin="round" stroke-linecap="round"></path>
+                        <path data-name="layer2" fill="none" stroke="#ffffff" stroke-miterlimit="10"
+                        stroke-width="3" d="M62 35l-17 5.6L28 35m17 5.6V61M28 33.2v15.6l-13 4.3-13-4.3V33.2l13-4.3 13 4.3z"
+                        stroke-linejoin="round" stroke-linecap="round"></path>
+                        <path data-name="layer2" fill="none" stroke="#ffffff" stroke-miterlimit="10"
+                        stroke-width="3" d="M28 33.2l-13 4.3-13-4.3m13 4.3v15.6" stroke-linejoin="round"
+                        stroke-linecap="round"></path>
+                        <path data-name="layer1" fill="none" stroke="#ffffff" stroke-miterlimit="10"
+                        stroke-width="3" d="M42 6.9v14.2L30 25l-12-3.9V6.9L30 3l12 3.9z" stroke-linejoin="round"
+                        stroke-linecap="round"></path>
+                        <path data-name="layer1" fill="none" stroke="#ffffff" stroke-miterlimit="10"
+                        stroke-width="3" d="M42 6.9l-12 4-12-4m12 4V25" stroke-linejoin="round"
+                        stroke-linecap="round"></path>
+                    </svg>
+                    Components
+                </div>
+                <ul class="dropdown"></ul>
+            </div>
+        </div>
+    </script>
+    <script type="module" src="./js/panels.js"></script>
+</body>
+
+

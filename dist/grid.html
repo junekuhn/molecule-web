@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+    <title>modal-grid</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+</head>
+
+<body>
+   <div id="toolbar" class="toolbar">
+        <div class="checkbox-container">
+                <input id="checkbox" type="checkbox" class="checkbox"/>
+                <label for="checkbox">Sound On/Off</label>
+            </div>
+            <div class="volume-container">
+                <input id="volume" type="number" min="0.0" max="1.0" step="0.1" value="0.5" class="volume"/>
+                <label for="volume">Volume</label>
+            </div>
+    </div>
+    <div id="main" class="modal-panel-layout">
+    </div>
+    <div id="overlay" class="hide modal-panel-layout"></div>
+
+    <!--    the panel three stuff goes in here-->
+    <div id="modal" class="modal-panel-layout hide">
+        <div id="panel-0" class="panel">
+            <div id="content-0" class="content">
+
+            </div>
+            <div id="scene-container-0" class="scene-container">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="tooltip" role="tooltip"></div>
+
+    <canvas id="c" class="hide modal-panel-layout"></canvas>
+
+    <script id="template" type="notjs">
+        <div class="scene"></div>
+        <div class="description">
+            <h1>$</h1>
+        </div>
+        <div class="flex-container">
+            <div class="views">
+                <input type="button" value="Views"/>
+                <ul class="dropdown"></ul>
+            </div>
+            <div class="sounds">
+                <input type="button" value="Sound Bank" aria-describedby="tooltip-sound"/>
+                <div id="tooltip-sound" class="visually-hidden" role="tooltip">The Sounds below represent each atom <br>according to their protons.</div>
+                <ul class="dropdown"></ul>
+            </div>
+            <div class="meshes">
+                <input type="button" value="Meshes"/>
+                <ul class="dropdown"></ul>
+            </div>
+        </div>
+    </script>
+    <script type="module" src="./js/panels.js"></script>
+
+    <script type="text/javascript">
+        var main = document.getElementById('main');
+        var modal = document.getElementById('modal');
+        var overlay = document.getElementById('overlay');
+        var canvas = document.getElementById('c');
+
+        // Build grid
+        var rows = ['1', '2', '3', '4', '5', '6'];
+        var cols = ['Methane', 'Ethane', 'Ethylene', 'Ethyne', 'E', 'F', 'G', 'H', 'I', 'J'];
+
+        for (var i = 0; i < rows.length; i++) {
+            var r = rows[i];
+
+            var row = document.createElement('div');
+            row.className = 'row';
+            main.appendChild(row);
+
+            for (j = 0; j < cols.length; j++) {
+                var c = cols[j];
+
+                var tile = document.createElement('div');
+                tile.className = 'tile row' + r + ' col' + c;
+                row.appendChild(tile);
+
+                var num = document.createElement('div');
+                num.className = 'display-number';
+                num.innerHTML = c + r;
+                tile.appendChild(num);
+            }
+        }
+
+        var tiles = document.querySelectorAll('.tile');
+
+        tiles.forEach(elem => {
+            elem.addEventListener('click', function(e) {
+                showTile(elem);
+            });
+        });
+
+        [modal, overlay].forEach(elem => {
+            elem.addEventListener('click', function(e) {
+                closeModal();
+            });
+        });
+
+        function showTile(tile) {
+            // Set content
+            //modal.innerHTML = tile.innerHTML;
+
+            // Show overlay, modal
+            modal.classList.toggle("hide");
+            overlay.classList.toggle("hide");
+            main.classList.toggle("fadeout");
+            canvas.classList.toggle("hide");
+
+
+        }
+
+        function closeModal() {
+            modal.classList.toggle("hide");
+            overlay.classList.toggle("hide");
+            main.classList.toggle("fadeout");
+            canvas.classList.toggle("hide");
+        }
+
+    </script>
+</body>

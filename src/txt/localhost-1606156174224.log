@@ -1,0 +1,89 @@
+three.module.js:16023 THREE.WebGLRenderer: EXT_frag_depth extension not supported.
+get @ three.module.js:16023
+WebGLPrograms.getParameters @ three.module.js:18709
+initMaterial @ three.module.js:24774
+setProgram @ three.module.js:24967
+WebGLRenderer.renderBufferDirect @ three.module.js:24018
+renderObject @ three.module.js:24756
+renderObjects @ three.module.js:24716
+WebGLRenderer.render @ three.module.js:24523
+render @ ar.js:415
+onAnimationFrame @ three.module.js:23315
+onAnimationFrame @ three.module.js:14410
+XRRequestFrame (async)
+onAnimationFrame @ three.module.js:14412
+XRRequestFrame (async)
+onAnimationFrame @ three.module.js:14412
+XRRequestFrame (async)
+onAnimationFrame @ three.module.js:14412
+XRRequestFrame (async)
+onAnimationFrame @ three.module.js:14412
+XRRequestFrame (async)
+start @ three.module.js:14423
+onRequestReferenceSpace @ three.module.js:22953
+Promise.then (async)
+WebXRManager.setSession @ three.module.js:23021
+onSessionStarted @ ARButton.js:25
+Promise.then (async)
+button.onclick @ ARButton.js:68
+three.module.js:16023 THREE.WebGLRenderer: WEBGL_draw_buffers extension not supported.
+get @ three.module.js:16023
+WebGLPrograms.getParameters @ three.module.js:18710
+initMaterial @ three.module.js:24774
+setProgram @ three.module.js:24967
+WebGLRenderer.renderBufferDirect @ three.module.js:24018
+renderObject @ three.module.js:24756
+renderObjects @ three.module.js:24716
+WebGLRenderer.render @ three.module.js:24523
+render @ ar.js:415
+onAnimationFrame @ three.module.js:23315
+onAnimationFrame @ three.module.js:14410
+XRRequestFrame (async)
+onAnimationFrame @ three.module.js:14412
+XRRequestFrame (async)
+onAnimationFrame @ three.module.js:14412
+XRRequestFrame (async)
+onAnimationFrame @ three.module.js:14412
+XRRequestFrame (async)
+onAnimationFrame @ three.module.js:14412
+XRRequestFrame (async)
+start @ three.module.js:14423
+onRequestReferenceSpace @ three.module.js:22953
+Promise.then (async)
+WebXRManager.setSession @ three.module.js:23021
+onSessionStarted @ ARButton.js:25
+Promise.then (async)
+button.onclick @ ARButton.js:68
+three.module.js:16023 THREE.WebGLRenderer: EXT_shader_texture_lod extension not supported.
+get @ three.module.js:16023
+WebGLPrograms.getParameters @ three.module.js:18711
+initMaterial @ three.module.js:24774
+setProgram @ three.module.js:24967
+WebGLRenderer.renderBufferDirect @ three.module.js:24018
+renderObject @ three.module.js:24756
+renderObjects @ three.module.js:24716
+WebGLRenderer.render @ three.module.js:24523
+render @ ar.js:415
+onAnimationFrame @ three.module.js:23315
+onAnimationFrame @ three.module.js:14410
+XRRequestFrame (async)
+onAnimationFrame @ three.module.js:14412
+XRRequestFrame (async)
+onAnimationFrame @ three.module.js:14412
+XRRequestFrame (async)
+onAnimationFrame @ three.module.js:14412
+XRRequestFrame (async)
+onAnimationFrame @ three.module.js:14412
+XRRequestFrame (async)
+start @ three.module.js:14423
+onRequestReferenceSpace @ three.module.js:22953
+Promise.then (async)
+WebXRManager.setSession @ three.module.js:23021
+onSessionStarted @ ARButton.js:25
+Promise.then (async)
+button.onclick @ ARButton.js:68
+ar.js:314 {type: "selectstart", target: Group}target: Group {uuid: "D35BCFA5-A9C8-475B-9338-8194003DAF4F", name: "", type: "Group", parent: Scene, children: Array(0), …}type: "selectstart"__proto__: Object
+ar.js:319 undefined
+client:52 [WDS] Live Reloading enabled.
+temp1
+{type: "selectstart", target: Group}
